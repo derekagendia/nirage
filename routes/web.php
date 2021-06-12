@@ -18,6 +18,7 @@ Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('hom
 Route::group(['prefix' => 'nirage'], function(){
 
     Route::get('appartement',[\App\Http\Controllers\HomeController::class,'appartements'])->name('appartement');
+    Route::get('contact',[\App\Http\Controllers\ContactController::class,'index'])->name('contact');
 
 });
 

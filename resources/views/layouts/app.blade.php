@@ -35,7 +35,7 @@
                         <a class="nav-link active fw-bolder" aria-current="page" href="{{ route('home') }}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('appartements') }}">APARTMENTS</a>
+                        <a class="nav-link" href="{{ route('appartement') }}">APARTMENTS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">CONTACT US</a>
