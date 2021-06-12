@@ -24,7 +24,7 @@
 <section class="page-header" style="background-image:url({{ asset('assets/img/apartments/cover.jpg') }});">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/img/nirage-01.png') }}" style="height:48px; width:auto;"></a>
+            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/nirage-01.png') }}" style="height:48px; width:auto;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,10 +32,10 @@
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active fw-bolder" aria-current="page" href="index.html">HOME</a>
+                        <a class="nav-link active fw-bolder" aria-current="page" href="{{ route('home') }}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="apartment.html">APARTMENTS</a>
+                        <a class="nav-link" href="{{ route('appartements') }}">APARTMENTS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">CONTACT US</a>
