@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
+
 Route::group(['prefix' => 'nirage'], function(){
 
-   Route::get('home',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
-   Route::get('appartement',[\App\Http\Controllers\HomeController::class,'appartements'])->name('appartement');
+    Route::get('appartement',[\App\Http\Controllers\HomeController::class,'appartements'])->name('appartement');
 
 });
 
