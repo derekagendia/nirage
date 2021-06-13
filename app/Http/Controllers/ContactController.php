@@ -8,6 +8,9 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('nirage.contact');
+        $data = [
+            'title' => 'Contact'
+        ];
+        return view('nirage.contact',$data);
     }
 }

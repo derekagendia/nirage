@@ -2,18 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apartement;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('nirage.index');
+        $data = [
+            'title' => 'NIRAGE',
+            'apartments' => Apartement::all()
+        ];
+        return view('nirage.index', $data);
     }
 
-    public function  appartements()
+    public function show()
     {
-        return view('nirage.appartements');
+        $data = [
+            'title' => 'Apartment | Nirage',
+            'apartments' => Apartement::all()
+        ];
+        return view('nirage.appartements', $data);
+    }
+
+    public function details($slug)
+    {
+        $data = [
+            'title' => 'Details Apartment ',
+            'apartment' => Apartement::where('slug', $slug)->firstOrfail()
+        ];
+        return view('nirage.details', $data);
     }
 
 }

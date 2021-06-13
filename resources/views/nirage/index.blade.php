@@ -21,9 +21,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="./img/apartments/6.jpg" class="img-fluid"
+                    <img src="{{ asset('assets/img/apartments/6.jpg') }}" class="img-fluid"
                          style="position:absolute; height:300px; width:auto;">
-                    <img src="./img/apartments/7.jpg" class="img-fluid shadow-lg"
+                    <img src="{{ asset('assets/img/apartments/7.jpg') }}" class="img-fluid shadow-lg"
                          style="position:relative; left:25%; top: 15%; height:300px; width:auto; ">
                 </div>
             </div>
@@ -41,64 +41,22 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-md-6 mt-5">
-                    <div class="card bg-transparent">
-                        <div class="img-hover-zoom">
-                            <a href="prop_details.html"><img src="./img/apartments/1.jpg" class="img-fluid"
-                                                             alt="This zooms-in really well and smooth">
-                            </a></div>
-                        <div class="card-body bg-transparent">
-                            <p class="text-center">Apartement Sofia</p>
-                            <a href="prop_details.html">
-                                <button type="button" class="btn btn-link text-gold">Explore</button>
-                            </a>
+                @foreach($apartments as $apartement)
+                    <div class="col-md-6 mt-5">
+                        <div class="card bg-transparent">
+                            <div class="img-hover-zoom">
+                                <a href="{{ route('details',$apartement->slug) }}"><img src="{{ asset(voyager::image($apartement->image)) }}" class="img-fluid"
+                                                                 alt="This zooms-in really well and smooth">
+                                </a></div>
+                            <div class="card-body bg-transparent">
+                                <p class="text-center">{{ $apartement->name }}</p>
+                                <a href="{{ route('details',$apartement->slug) }}">
+                                    <button type="button" class="btn btn-link text-gold">Explore</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mt-5">
-                    <div class="card bg-transparent">
-                        <div class="img-hover-zoom">
-                            <img src="./img/apartments/12.jpg" class="img-fluid"
-                                 alt="This zooms-in really well and smooth">
-                        </div>
-                        <div class="card-body bg-transparent">
-                            <p class="text-center">Apartement Bleu</p>
-                            <a href="#">
-                                <button type="button" class="btn btn-link text-gold">Explore</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-5">
-                    <div class="card bg-transparent">
-                        <div class="img-hover-zoom">
-                            <img src="./img/apartments/12.jpg" class="img-fluid"
-                                 alt="This zooms-in really well and smooth">
-                        </div>
-                        <div class="card-body bg-transparent">
-                            <p class="text-center">Apartement le lustre</p>
-                            <a href="#">
-                                <button type="button" class="btn btn-link text-gold">Explore</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-5">
-                    <div class="card bg-transparent">
-                        <div class="img-hover-zoom">
-                            <img src="./img/apartments/12.jpg" class="img-fluid"
-                                 alt="This zooms-in really well and smooth">
-                        </div>
-                        <div class="card-body bg-transparent">
-                            <p class="text-center">Apartment </p>
-                            <a href="#">
-                                <button type="button" class="btn btn-link text-gold">Explore</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
+                @endforeach
             </div>
         </div>
         </div>

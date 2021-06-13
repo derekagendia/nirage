@@ -9,13 +9,14 @@
     <!-- Fonts -->
     <link rel="preconnects" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/nirage-01.png') }}">
 
 
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
 
-    <title>NIRAGE</title>
+    <title>{{ $title }}</title>
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
@@ -38,7 +39,7 @@
                         <a class="nav-link" href="{{ route('appartement') }}">APARTMENTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">CONTACT US</a>
+                        <a class="nav-link" href="{{ route('contact') }}">CONTACT US</a>
                     </li>
 
                 </ul>
@@ -60,7 +61,7 @@
         <div class="row">
             <div class="col-md-7">
                 <h2 class="display-4 fw-bolder text-white" style="padding-top:15rem;">Beautiful apartments tailored for your needs</h2>
-                <p class=""><a href="apartment.html"><button type="button" class="btn btn-lg btn-primary">Our apartments</button></a></p>
+                <p class=""><a href="{{ route('appartement') }}"><button type="button" class="btn btn-lg btn-primary">Our apartments</button></a></p>
             </div>
             <div class="col-md-5"></div>
         </div>
