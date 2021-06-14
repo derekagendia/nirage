@@ -77,39 +77,49 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card p-3 shadow-lg">
-                    <h2 class="text-center display-4">Request a visit</h2>
+                    <h2 class="text-center display-6">Request a visit {{ (isset($apartment->slug)? 'for '.$apartment->slug :'') }}</h2>
                     <div class="card-body">
-                        <form class="row">
+                        <form class="row" action="{{ route('send') }}" method="POST" >
+                            @csrf
+
+                                <input type="hidden" class="form-control" id="floatingInput" placeholder="Votre nom" name="slug" value="{{ (isset($apartment->slug)?$apartment->slug :'salut') }}">
+
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Votre nom">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Votre nom" name="name">
                                     <label for="floatingInput">Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
                                     <label for="floatingInput">email address</label>
                                 </div>
                             </div>
-                        </form>
 
-                        <form class="row mt-lg-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="phone" class="form-control" id="floatingInput" placeholder="Email" name="phone">
+                                    <label for="floatingInput">Your phone number</label>
+                                </div>
+                            </div>
+
                             <p class="text-muted">leave a message</p>
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="content"></textarea>
                                     <label for="floatingTextarea">Message</label>
                                 </div>
                             </div>
+
+                            <p class="text-center">
+                                <button type="submit" class="btn btn-dark btn-lg mt-5">Request</button>
+                            </p>
                         </form>
 
                     </div>
 
-                    <p class="text-center">
-                        <a href="#"><button type="submit" class="btn btn-dark btn-lg mt-5">Request</button></a>
-                    </p>
                 </div>
             </div>
         </div>
