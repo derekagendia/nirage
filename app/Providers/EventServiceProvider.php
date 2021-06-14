@@ -20,7 +20,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\VisitRequestEvent' => [
             'App\Listeners\VisitRequestListener'
-        ]
+        ],
+        'App\Events\SimpleVisiteEvent' => [
+            'App\Listeners\SimpleVisiteListener'
+        ],
     ];
 
     /**
