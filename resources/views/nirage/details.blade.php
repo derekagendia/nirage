@@ -48,7 +48,6 @@
                         <li><i data-feather="minus-square"></i> {{ $apartment->amenities4 }} </li>
                         <li><i data-feather="minus-square"></i> {{ $apartment->amenitis5 }} </li>
                     </ul>
-                    <button type="button" class="btn btn-block btn-dark">Request a tour</button>
                 </div>
             </div>
         </div>
