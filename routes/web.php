@@ -19,6 +19,7 @@ Route::group(['prefix' => 'nirage'], function () {
 
     Route::get('appartement', [\App\Http\Controllers\HomeController::class, 'show'])->name('appartement');
     Route::get('contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+    Route::post('send', [\App\Http\Controllers\ContactController::class, 'send'])->name('send');
     Route::get('/details/{slug}', [\App\Http\Controllers\HomeController::class, 'details'])->name("details");
 
 });
