@@ -82,25 +82,25 @@
                         <form class="row" action="{{ route('send') }}" method="POST" >
                             @csrf
 
-                                <input type="hidden" class="form-control" id="floatingInput" placeholder="Votre nom" name="slug" value="{{ (isset($apartment->slug)?$apartment->slug :'salut') }}">
+                                <input type="hidden" class="form-control" id="floatingInput" placeholder="Votre nom" name="slug" value="{{ (isset($apartment->slug)?$apartment->slug :' ') }}">
 
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Votre nom" name="name">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingInput" placeholder="Votre nom" name="name" value="{{ old('name') }}">
                                     <label for="floatingInput">Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="Email" name="email" value="{{ old('email') }}">
                                     <label for="floatingInput">email address</label>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <input type="phone" class="form-control" id="floatingInput" placeholder="Email" name="phone">
+                                    <input type="phone" class="form-control @error('phone') is-invalid @enderror" id="floatingInput" placeholder="Email" name="phone" value="{{ old('phone') }}">
                                     <label for="floatingInput">Your phone number</label>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                             <p class="text-muted">leave a message</p>
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="content"></textarea>
+                                    <textarea class="form-control @error('content') is-invalid @enderror" placeholder="Leave a comment here" id="floatingTextarea" name="content" value="{{ old('content') }}" ></textarea>
                                     <label for="floatingTextarea">Message</label>
                                 </div>
                             </div>
