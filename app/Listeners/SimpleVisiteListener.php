@@ -27,6 +27,6 @@ class SimpleVisiteListener
      */
     public function handle($event)
     {
-        Mail::to($event->data['email'])->send(new SimpleVisiteMail($event->data));
+        Mail::to('lanirage@logementlanirage.com')->send(new SimpleVisiteMail($event->data));
     }
 }

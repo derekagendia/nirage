@@ -27,6 +27,6 @@ class VisitRequestListener
      */
     public function handle($event)
     {
-        Mail::to($event->user['email'])->send(new VisiteRequestMail($event->user, $event->apartment));
+        Mail::to('lanirage@logementlanirage.com')->send(new VisiteRequestMail($event->user, $event->apartment));
     }
 }
