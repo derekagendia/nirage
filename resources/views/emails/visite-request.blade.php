@@ -12,6 +12,5 @@
 
     {{ $user['content'] }}
 
-    <img src="{{ asset('assets/img/apartments/6.jpg') }}" class="img-fluid" style="position:absolute; height:300px; width:auto;">
 
 @endcomponent
