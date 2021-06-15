@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'postmark'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'stevyabessolo@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'lanirage@logementlanirage.com'),
         'name' => env('MAIL_FROM_NAME', 'stevy'),
     ],
 
