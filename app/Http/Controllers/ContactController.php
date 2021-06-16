@@ -27,7 +27,7 @@ class ContactController extends Controller
             // Event if is a simple request visite
             event(new SimpleVisiteEvent($request));
 
-            return redirect()->back();
+            return redirect()->back()->with('message','Your request has been well registered  !   We will get back to you as soon as possible');
         }
 
         // Event if a visitor select an apartment to visite
@@ -35,6 +35,6 @@ class ContactController extends Controller
 
         event(new VisitRequestEvent($request, $apartment));
 
-        return redirect()->back();
+        return redirect()->back()->with('message','Your request has been well registered  !   We will get back to you as soon as possible');
     }
 }

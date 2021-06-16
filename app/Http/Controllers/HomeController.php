@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $data = [
             'title' => 'NIRAGE',
-            'apartments' => Apartement::all()
+            'apartments' => Apartement::all()->sortByDesc('created_at')->forPage(1,4)
         ];
         return view('nirage.index', $data);
     }
@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $data = [
             'title' => 'Apartment | Nirage',
-            'apartments' => Apartement::all()
+            'apartments' => Apartement::all()->sortByDesc('created_at')
         ];
         return view('nirage.appartements', $data);
     }
