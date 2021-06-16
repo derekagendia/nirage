@@ -63,19 +63,6 @@
     </nav>
     <!-- end of navbar -->
 
-    <!-- header content -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <h2 class="display-4 fw-bolder text-white" style="padding-top:15rem;">Beautiful apartments tailored for your needs</h2>
-                <p class=""><a href="{{ route('appartement') }}"><button type="button" class="btn btn-lg btn-primary">Our apartments</button></a></p>
-            </div>
-            <div class="col-md-5"></div>
-        </div>
-    </div>
-</section>
-
 @yield('content')
 
 
